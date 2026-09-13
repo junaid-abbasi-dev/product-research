@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <title>Product Research Tracker</title>
+</head>
+<body>
+    <main>
+        <div class="navigation">
+            <div class="navigation-left">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-search-icon lucide-package-search"><path d="M12 22V12"/><path d="M20.27 18.27 22 20"/><path d="M21 10.498V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 .001l.98-.559"/><path d="M3.29 7 12 12l8.71-5"/><path d="m7.5 4.27 8.997 5.148"/><circle cx="18.5" cy="16.5" r="2.5"/></svg>
+                </div>
+                <a href="/" class="brand-name">Product Research Tracker</a>
+            </div>
+
+            <div class="navigation-subheading">
+                <p>Your research is saved locally</p>
+            </div>
+        </div>
+
+        <section class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">✨Built for smarter sourcing</p>
+                <h1 class="hero-heading">Know your profit before you buy inventory.</h1>
+                <p class="hero-subheading">Enter your product costs, calculate the true margin, and keep promising ideas organized in one simple place.</p>
+                
+                <div class="features">
+                    <p class="feature-text">✅ Instant calculations</p>
+                    <p class="feature-text">✅ Saved in your browser</p>
+                    <p class="feature-text">✅ No account needed</p>
+                </div>
+            </div>
+
+             <div class="product-form">
+                <div class="product-form-header">
+                    <div class="product-form-heading">
+                        <h2>Check a product</h2>
+                        <p>See the profit before saving it.</p>
+                    </div>
+
+                    <div class="product-form-action">
+                        <p>Calculate</p>
+                    </div>
+                </div>
+
+                <form id="product-form">
+                    <div class="form-group product-name-group">
+                        <label for="product-name">Product name</label>
+                        <input
+                            type="text"
+                            id="product-name"
+                            placeholder="Example product"
+                        >
+                    </div>
+
+                    <div class="product-info-group">
+                        <div class="form-group">
+                            <label for="product-cost">Product cost</label>
+                            <input
+                                type="number"
+                                id="product-cost"
+                                placeholder="0.00"
+                                min="0"
+                                step="0.01"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selling-price">Selling price</label>
+                            <input
+                                type="number"
+                                id="selling-price"
+                                placeholder="0.00"
+                                min="0"
+                                step="0.01"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="product-info-group">
+                        <div class="form-group">
+                            <label for="marketplace-fees">Marketplace fees</label>
+                            <input
+                                type="number"
+                                id="marketplace-fees"
+                                placeholder="0%"
+                                step="0.01"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estimated-sales">Estimated sales</label>
+                            <input
+                                type="number"
+                                id="estimated-sales-input"
+                                placeholder="50"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="results">
+                        <div class="result">
+                            <p>Profit per unit</p>
+                            <h2 id="profit-per-unit">$0.00</h2>
+                        </div>
+
+                        <div class="result">
+                            <p>Profit margin</p>
+                            <h2 id="profit-margin">0%</h2>
+                        </div>
+                        <div class="estimated-total-profit">
+                            <p>Estimated sales profit</p>
+                            <h2 id="estimated-sales-profit">$0</h2>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button type="submit" class="button calculate">
+                            Calculate
+                        </button>
+                        <button type="submit" class="button add-products">
+                            Save to my products
+                        </button>
+                        <button type="reset" id="clear" class="button">Clear</button>
+                    </div>
+                </form>
+                </div>
+                </section>
+                <section class="products-saved">
+                    <div class="products-info-section">
+                        <div class="products-section">
+                            <div class="my-products">
+                                <h2 class="my-products-heading">My products</h2>
+                                <p class="my-products-subheading">Ideas you are currently researching</p>
+                            </div>
+                            <div class="products-saved">
+                                <p id="sub-heading"></p>
+                            </div>
+                        </div>
+
+                        <div class="products-section item-info">
+                            <div class="products-name saved-products">
+                                <!--saved products here-->
+                            </div>
+
+                            <div class="product-cost-profit">
+                                <div class="saved-product-cost">
+                                    
+                                </div>
+                                <div class="saved-products-profit">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    </main>
+</body>
+</html>
+
+<!--
+<h2 class="product-name">Absorbent bath mat</h2>
+<p class="product-add-status">Added today</p>
+
+<p class="cost">COST</p>
+<p class="cost-price">$0.00</p>
+
+<p class="profit">PROFIT</p>
+<p class="profit-price">$0.00</p>
+-->
