@@ -1,4 +1,5 @@
-
+require('datejs')
+const currentDateTime = Date.today().setTimeToNow()
 const products = []
 // read values
 const productName = document.querySelector("#product-name")
@@ -78,7 +79,7 @@ saveProductsBtn.addEventListener("click", function() {
     savedProductsContainer.innerHTML += 
     `
     <h2 class="product-name">${product.name}</h2>
-    <p class="product-add-status">Added today</p> 
+    <p class="product-add-status">${currentDateTime.toString("ddd MMM dd yyyy HH:mm")}</p> 
     `
     savedProductsCost.innerHTML = 
     `
