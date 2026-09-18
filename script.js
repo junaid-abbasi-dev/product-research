@@ -59,7 +59,7 @@ calculateBtn.addEventListener("click", function(event) {
 })
 
 // save products
-saveProductsBtn.addEventListener("click", function() {
+saveProductsBtn.addEventListener("click", function(event) {
     event.preventDefault()
 
     const product = readProductValues()
