@@ -37,7 +37,7 @@ function readProductValues() {
     return product
 }
 
-calculateBtn.addEventListener("click", function() {
+calculateBtn.addEventListener("click", function(event) {
     event.preventDefault()
 
     const product = readProductValues()
