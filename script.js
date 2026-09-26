@@ -1,5 +1,4 @@
-require('datejs')
-const currentDateTime = Date.today().setTimeToNow()
+
 const products = []
 // read values
 const productName = document.querySelector("#product-name")
@@ -75,11 +74,12 @@ saveProductsBtn.addEventListener("click", function(event) {
         (product.sellingPrice * product.fees / 100)
 
     // render values
+    const currentDateTime = new Date()
     productsSavedStatus.textContent = `${products.length} Products Saved`
     savedProductsContainer.innerHTML += 
     `
     <h2 class="product-name">${product.name}</h2>
-    <p class="product-add-status">${currentDateTime.toString("ddd MMM dd yyyy HH:mm")}</p> 
+    <p class="product-add-status">Added on ${currentDateTime.toLocaleString()}</p> 
     `
     savedProductsCost.innerHTML = 
     `
@@ -99,5 +99,5 @@ clearForm.addEventListener("click", function(){
     profitPerUnit.textContent = "$0.00"
     profitPerMargin.textContent = "0%"
     estimatedSalesProfitPerUnit.textContent = "$0.00"
-    productsSavedStatus.textContent = `${products.length} Products Saved`
+    // productsSavedStatus.textContent = `${products.length} Products Saved`
 })
