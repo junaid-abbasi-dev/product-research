@@ -81,15 +81,15 @@ saveProductsBtn.addEventListener("click", function(event) {
     <h2 class="product-name">${product.name}</h2>
     <p class="product-add-status">Added on ${currentDateTime.toLocaleString()}</p> 
     `
-    savedProductsCost.innerHTML = 
+    savedProductsCost.innerHTML += 
     `
     <p class="cost">COST</P>
     <p class="cost">$${product.cost}</p>
     `
-    savedProductsProfit.innerHTML = 
+    savedProductsProfit.innerHTML += 
     `
     <p class="profit">PROFIT</p>
-    <p class="profit">$${profit}</p>
+    <p class="profit">$${profit.toFixed(2)}</p>
     `
 })
 
